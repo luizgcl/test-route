@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Tenant } from './services/tenant';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
+  tenant = inject(Tenant);
   protected readonly title = signal('multi-web');
 }
